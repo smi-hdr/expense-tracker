@@ -32,7 +32,7 @@ def add_expense():
         "category": category,
         "description": description
     })
-    save_data(expenُses)
+    save_data(expenses)
     print("هزینه با موفقیت ذخیره شد!")
 
 
