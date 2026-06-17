@@ -52,13 +52,40 @@ def show_total():
     total = sum(expense["amount"] for expense in expenses)
     print(f"جمع کل هزینه‌ها: {total}")
 
+def delete_expense():
+expenses = load_data()
+
+```
+if not expenses:
+    print("هیچ هزینه‌ای برای حذف وجود ندارد.")
+    return
+
+view_expenses()
+
+try:
+    index = int(input("شماره هزینه‌ای که می‌خواهید حذف کنید: ")) - 1
+
+    if 0 <= index < len(expenses):
+        removed = expenses.pop(index)
+        save_data(expenses)
+        print(f"هزینه '{removed['description']}' حذف شد.")
+    else:
+        print("شماره نامعتبر است.")
+
+except ValueError:
+    print("لطفاً یک عدد وارد کنید.")
+```
+
+
 def menu():
     while True:
         print("\n===== Expense Tracker =====")
         print("1. افزودن هزینه")
         print("2. نمایش هزینه‌ها")
         print("3. نمایش جمع کل")
-        print("4. خروج")
+        print("4. حذف هزینه")
+        print("5. خروج")
+
 
         choice = input("یک گزینه انتخاب کنید: ")
 
@@ -69,6 +96,8 @@ def menu():
         elif choice == "3":
             show_total()
         elif choice == "4":
+            delete_expense()
+        elif choice == "5":
             print("خروج از برنامه...")
             break
         else:
