@@ -13,3 +13,21 @@ A simple, command-line-based expense tracker application written in Python. This
 2. Clone the repository:
 ```bash
    git clone https://github.com/smi-hdr/expense-tracker.git
+## Installation
+
+git clone https://github.com/smi-hdr/expense-tracker.git
+
+cd expense-tracker
+
+## Example
+
+1. Add Expense
+2. View Expenses
+3. Show Total
+4. Exit
+
+Choose an option: 1
+
+Category: Food
+Description: Breakfast
+Amount: 50000
