@@ -53,29 +53,26 @@ def show_total():
     print(f"جمع کل هزینه‌ها: {total}")
 
 def delete_expense():
-expenses = load_data()
+    expenses = load_data()
 
-```
-if not expenses:
-    print("هیچ هزینه‌ای برای حذف وجود ندارد.")
-    return
+    if not expenses:
+        print("هیچ هزینه‌ای برای حذف وجود ندارد.")
+        return
 
-view_expenses()
+    view_expenses()
 
-try:
-    index = int(input("شماره هزینه‌ای که می‌خواهید حذف کنید: ")) - 1
+    try:
+        index = int(input("شماره هزینه‌ای که می‌خواهید حذف کنید: ")) - 1
 
-    if 0 <= index < len(expenses):
-        removed = expenses.pop(index)
-        save_data(expenses)
-        print(f"هزینه '{removed['description']}' حذف شد.")
-    else:
-        print("شماره نامعتبر است.")
+        if 0 <= index < len(expenses):
+            removed = expenses.pop(index)
+            save_data(expenses)
+            print(f"هزینه '{removed['description']}' حذف شد.")
+        else:
+            print("شماره نامعتبر است.")
 
-except ValueError:
-    print("لطفاً یک عدد وارد کنید.")
-```
-
+    except ValueError:
+        print("لطفاً یک عدد وارد کنید.")
 
 def menu():
     while True:
